@@ -76,15 +76,20 @@ const userController = {
         .catch(err => res.status(400).json(err));
     },
     // add friend to user's friend list
-    addFriend({params, body }, res) {
+    addFriend({params}, res) {
         User.findOneAndUpdate(
-            { _id: params.userId },
-            { $push: { friends: body } },
-            { new: true, runValidators: true }
+            { _id: params.id },
+            { $push: { friends: params.friendId } },
+            { new: true }
         )
+        .populate({
+            path: 'friends',
+            select: '-__v'
+        })
+        .select('-__v')
         .then(dbUserData => {
             if(!dbUserData) {
-                    res.status(404).json({ message: 'No pizza found with this id!' })
+                    res.status(404).json({ message: 'No user found with this id!' })
                     return;
                 }
                 res.json(dbUserData)
@@ -99,7 +104,7 @@ const userController = {
                 return res.status(404).json({ message: 'No friend found with this id!' });
             }
             return User.findOneAndDelete(
-                { _id: params.userId },
+                { _id: params.id },
                 { $pull: { friends: params.friendId } },
                 { new: true }
             );
