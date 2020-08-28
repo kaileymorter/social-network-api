@@ -65,10 +65,10 @@
   localhost:3001/api/api/thoughts/:userId
   * POST to create a new thought and push the created thought's _id to the associated user's thought array
   
-  localhost:3001/api/thoughts/:thoughtId/reactions - post
+  localhost:3001/api/thoughts/:thoughtId/reactions
   * POST to create a reaction stored in a single thought's reactions array field
   
-  localhost:3001/api/thoughts/:thoughtId/reactionId -
+  localhost:3001/api/thoughts/:thoughtId/reactionId
   * DELETE to pull and remove a reaction by the reaction's reactionId value
 
   ## License:
