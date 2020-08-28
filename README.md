@@ -44,23 +44,30 @@
   localhost:3001/api/users
    * GET all users
    * POST a new user
+  
   localhost:3001/api/users/:id - get, put, delete
   * GET a single user by its _id and populated thought and friend data
   * PUT to update a user by its _id
   * DELETE to remove user by its _id
+  
   localhost:3001/api/users/:id/friends/friendId
   * POST to add a new friend to a user's friend list
   * DELETE to remove user by its _id
+  
   localhost:3001/api/thoughts
   * GET to get all thoughts
+  
   localhost:3001/api/thoughts/:id
   * GET to get a single thought by its _id
   * PUT to update a thought by its _id
   * DELETE to remove a thought by its _id
+  
   localhost:3001/api/api/thoughts/:userId
   * POST to create a new thought and push the created thought's _id to the associated user's thought array
+  
   localhost:3001/api/thoughts/:thoughtId/reactions - post
   * POST to create a reaction stored in a single thought's reactions array field
+  
   localhost:3001/api/thoughts/:thoughtId/reactionId -
   * DELETE to pull and remove a reaction by the reaction's reactionId value
 
