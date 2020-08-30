@@ -78,6 +78,7 @@
   https://www.contributor-covenant.org/
 
   ## Video:
+  https://drive.google.com/file/d/1fG_KpH22T7RuZO1zz0O7eNm6FC49ynn5/view
 
   ## Questions:
   [My Github Account](https://github.com/kaileymorter)
